@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom"
 import './App.css';
 import DetailPhoto from './screens/DetailPhoto.jsx';
 import CreatePhoto from './screens/CreatePhoto.jsx';
+import EditPhoto from './screens/EditPhoto.jsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/photo" element={<Photos />} />
         <Route path="/photo/:id" element={<DetailPhoto />} />
         <Route path="/add-photo" element={<CreatePhoto />} />
+        <Route path="/photo/:id/edit" element={<EditPhoto />} />
       </Routes>
     </div>
   );

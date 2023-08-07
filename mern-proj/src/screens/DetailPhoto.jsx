@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getPhoto } from '../services/photos.js';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export default function DetailPhoto() {
   const [photo, setPhoto] = useState({})
@@ -23,6 +23,13 @@ export default function DetailPhoto() {
       <img src={photo.photo} alt={photo.full_name} />
       <p>{photo.earth_date}</p>
       <p>{photo.rover_name}</p>
+      <div>
+        <button>
+          <Link to={`/photo/${photo._id}/edit`}>
+            Edit Photo
+          </Link>
+        </button>
+      </div>
     </div>
   )
 }
