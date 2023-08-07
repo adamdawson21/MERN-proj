@@ -40,7 +40,7 @@ export const updatePhoto = async (id, photoData) => {
 
 export const deletePhoto = async (id) => {
   try {
-    const response = await api.delete(`/photo${id}`);
+    const response = await api.delete(`/photo/${id}`);
     return response.data;
   } catch (error) {
     throw error;

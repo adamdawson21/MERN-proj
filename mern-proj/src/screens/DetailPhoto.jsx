@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { getPhoto } from '../services/photos.js';
-import { useParams, Link } from 'react-router-dom';
+import { getPhoto, deletePhoto } from '../services/photos.js';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 export default function DetailPhoto() {
   const [photo, setPhoto] = useState({})
 
   let { id } = useParams()
+  let navigate = useNavigate()
 
   const fetchPhoto = async () => {
     const onePhoto = await getPhoto(id)
@@ -29,6 +30,10 @@ export default function DetailPhoto() {
             Edit Photo
           </Link>
         </button>
+        <button onClick={() => {
+          deletePhoto(photo._id)
+          navigate("/photo", { replace: true })
+        }}>Delete Photo</button>
       </div>
     </div>
   )
