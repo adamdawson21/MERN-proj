@@ -7,3 +7,8 @@ nav {
   justify-content: space-around;
   font-size: 26px;
 }
+
+.photo-image {
+  height: 50px;
+  width: 50px;
+}

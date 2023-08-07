@@ -3,6 +3,7 @@ import Nav from './components/Nav.jsx';
 import Photos from './screens/Photos.jsx';
 import { Routes, Route } from "react-router-dom"
 import './App.css';
+import DetailPhoto from './screens/DetailPhoto.jsx';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/photos" element={<Photos />} />
+        <Route path="/photo" element={<Photos />} />
+        <Route path="/photo/:id" element={<DetailPhoto />} />
       </Routes>
     </div>
   );
